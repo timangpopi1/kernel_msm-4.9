@@ -345,9 +345,6 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 dtbo-$(CONFIG_ARCH_MSM8940) += msm8940-mtp-overlay.dtbo
 dtbo-$(CONFIG_ARCH_MSM8940) += msm8940-cdp-overlay.dtbo
 
-ifeq ($(CONFIG_MACH_XIAOMI_MSM8917),y)
-dtb-$(CONFIG_MACH_XIAOMI_ROLEX) += msm8917-pmi8937-qrd-sku5-rolex.dtb
-else
 dtbo-$(CONFIG_ARCH_MSM8917) += msm8917-mtp-overlay.dtbo \
 	msm8917-qrd-overlay.dtbo \
 	msm8917-cdp-overlay.dtbo \
@@ -357,7 +354,6 @@ dtbo-$(CONFIG_ARCH_MSM8917) += msm8917-mtp-overlay.dtbo \
 	apq8017-mtp-overlay.dtbo \
 	apq8017-cdp-overlay.dtbo \
 	apq8017-cdp-wcd-rome-overlay.dtbo
-endif
 
 dtbo-$(CONFIG_ARCH_QM215) +=qm215-qrd-overlay.dtbo \
 	qcm2150-qrd-overlay.dtbo
@@ -579,6 +575,9 @@ dtb-$(CONFIG_ARCH_MSM8940) += msm8940-pmi8937-mtp.dtb \
 	msm8940-pmi8950-mtp.dtb \
 	msm8940-pmi8940-mtp.dtb
 
+ifeq ($(CONFIG_MACH_XIAOMI_MSM8917),y)
+dtb-$(CONFIG_MACH_XIAOMI_ROLEX) += msm8917-pmi8937-qrd-sku5-rolex.dtb
+else
 dtb-$(CONFIG_ARCH_MSM8917) += msm8917-pmi8950-mtp.dtb \
 	msm8917-pmi8950-cdp.dtb \
 	msm8917-pmi8950-rcm.dtb \
@@ -597,6 +596,7 @@ dtb-$(CONFIG_ARCH_MSM8917) += msm8917-pmi8950-mtp.dtb \
 	msm8917-pmi8940-mtp.dtb \
 	msm8917-pmi8940-cdp.dtb \
 	msm8917-pmi8940-rcm.dtb
+endif
 
 dtb-$(CONFIG_ARCH_QM215) += qm215-qrd.dtb \
 	qcm2150-qrd.dtb
