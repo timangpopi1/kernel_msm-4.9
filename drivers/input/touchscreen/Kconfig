@@ -1376,6 +1376,18 @@ config TOUCHSCREEN_SYNAPTICS_DSX
 source "drivers/input/touchscreen/synaptics_dsx/Kconfig"
 source "drivers/input/touchscreen/focaltech_touch/Kconfig"
 
+config TOUCHSCREEN_FT5346
+	tristate "FOCALTECH touchpanel FT5346 series"
+	depends on I2C
+
+source "drivers/input/touchscreen/FT5346/Kconfig"
+
+config TOUCHSCREEN_GT915L
+	tristate "GT915L touchscreens"
+	depends on I2C
+
+source "drivers/input/touchscreen/GT915L/Kconfig"
+
 config TOUCHSCREEN_FT5X06
        tristate "FocalTech touchscreens"
        depends on I2C
